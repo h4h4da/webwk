@@ -1,0 +1,32 @@
+﻿@model MyStore.Domain.Concrete.ShippingAddress
+
+<h2>订单结算</h2>
+<p>请填写收货人信息，店小二会及时发货的</p>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    foreach(var property in ViewData.ModelMetadata.Properties)
+    {
+        if (property.PropertyName != "GiftWrap")
+        { 
+            <div class="form-group">
+                <label> @(property.DisplayName??property.PropertyName)</label>
+                @Html.TextBox(property.PropertyName, null, new { @class="form-control"})
+            </div>
+        }
+    }
+    <h3>选项</h3>
+    <div class="checkbox">
+        <label>
+            @Html.EditorFor(x=>x.GiftWrap)
+            需要礼盒
+        </label>
+
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="确认订单"/>
+    </div>
+    
+
+}

@@ -84,6 +84,7 @@
     <Compile Include="Concrete\Product.cs">
       <DependentUpon>MyStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Concrete\ShippingAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

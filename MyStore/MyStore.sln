@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStore.Domain", "MyStore.Domain\MyStore.Domain.csproj", "{3D5E8F13-1FD2-4D75-9CB5-9311EEFBBCAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyStore.WebUI", "MyStore.WebUI\MyStore.WebUI.csproj", "{F6E6D009-818E-4A98-BB03-F2FCE0275ADE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D5E8F13-1FD2-4D75-9CB5-9311EEFBBCAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D5E8F13-1FD2-4D75-9CB5-9311EEFBBCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D5E8F13-1FD2-4D75-9CB5-9311EEFBBCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D5E8F13-1FD2-4D75-9CB5-9311EEFBBCAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6E6D009-818E-4A98-BB03-F2FCE0275ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E6D009-818E-4A98-BB03-F2FCE0275ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6E6D009-818E-4A98-BB03-F2FCE0275ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E6D009-818E-4A98-BB03-F2FCE0275ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

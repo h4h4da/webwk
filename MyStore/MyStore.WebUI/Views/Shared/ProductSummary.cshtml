@@ -1,0 +1,19 @@
+﻿@model MyStore.Domain.Concrete.Product
+
+<div class="well">
+    <h3> @Model.Name</h3>
+    <span class="pull-right label label-primary ">@Model.Price.ToString("c")</span>
+    <img src="@Model.ImageUrl" alt="@Model.Id" width="100" />
+
+
+    @using (Html.BeginForm("AddToCart", "Cart"))
+    { 
+        <div class="pull-right">
+            @Html.HiddenFor(x=>x.Id)
+            @Html.Hidden("ReturnUrl",Request.Url.PathAndQuery)
+            <input type="submit" class="btn btn-success" value="add to cart"/>
+        </div>
+    }
+
+    <p>@Model.Description</p>
+</div>

@@ -1,0 +1,49 @@
+﻿
+@model PagedList.IPagedList< MyStore.Domain.Concrete.Product>
+@using PagedList.Mvc;
+  
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<table class="table">
+<tr>
+    <th>
+       商品名
+    </th>
+    <th>
+        价格
+    </th>
+    <th>
+        描述
+    </th>
+    
+</tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+       
+    </tr>
+}
+</table>
+
+每页 @Model.PageSize 条记录，共 @Model.PageCount 页，当前第 @Model.PageNumber 页
+@Html.PagedListPager(Model, page => Url.Action("List2", new { page }))  
+
+<div class="btn-toolbar" role="toolbar">
+    <div class="btn-group">1</div>
+    <div class="btn-group">2</div>
+    <div class="btn-group">3</div>
+</div>

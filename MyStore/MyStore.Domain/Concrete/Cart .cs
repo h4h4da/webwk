@@ -35,6 +35,7 @@ namespace MyStore.Domain.Concrete
         {
             lineCollection.RemoveAll(e => e.Product.Id == p.Id);
         }
+        
          
     }   
 }

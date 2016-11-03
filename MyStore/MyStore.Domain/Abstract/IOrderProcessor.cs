@@ -8,6 +8,6 @@ namespace MyStore.Domain.Abstract
 {
     public interface IOrderProcessor
     {
-        void ProcessOrder(Cart cart, ShippingAddress shippingAddress);
+        void ProcessOrder(Cart cart, ShippingAddress shippingAddress,Customer customer);
     }
 }

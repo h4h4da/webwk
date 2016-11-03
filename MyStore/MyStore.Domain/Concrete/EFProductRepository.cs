@@ -16,6 +16,11 @@ namespace MyStore.Domain.Concrete
             get{ return db.Category;}
         }
 
+        public IQueryable<Customer> Customers
+        {
+            get{ return db.Customer; }
+        }
+
         public IQueryable<Product> Products
         {
             get { return db.Product; }

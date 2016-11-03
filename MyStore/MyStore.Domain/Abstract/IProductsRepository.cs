@@ -11,5 +11,6 @@ namespace MyStore.Domain.Abstract
 
         IQueryable<Product> Products { get; }
         IQueryable<Category> Categories { get; }
+        IQueryable<Customer> Customers { get; }
     }
 }

@@ -16,7 +16,7 @@ namespace MyStore.Domain.Concrete
         {
             emailSettings = settings;
         }
-        public void ProcessOrder(Cart cart, ShippingAddress shippingAddress)
+        public void ProcessOrder(Cart cart, ShippingAddress shippingAddress,Customer customer)
         {
             SmtpClient smtp = new SmtpClient();
             using (var smtpClient = new SmtpClient())
@@ -59,5 +59,7 @@ namespace MyStore.Domain.Concrete
 
             }
         }
+
+    
     }
 }

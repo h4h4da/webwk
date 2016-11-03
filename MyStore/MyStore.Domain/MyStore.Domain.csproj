@@ -67,6 +67,9 @@
     <Compile Include="Concrete\Category.cs">
       <DependentUpon>MyStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Concrete\Customer.cs">
+      <DependentUpon>MyStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Concrete\EFProductRepository.cs" />
     <Compile Include="Concrete\EmailOrderProcessor.cs" />
     <Compile Include="Concrete\EmailSettings.cs" />
@@ -85,6 +88,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MyStore.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Concrete\Order.cs">
+      <DependentUpon>MyStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concrete\OrderDetail.cs">
+      <DependentUpon>MyStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Concrete\Product.cs">
       <DependentUpon>MyStore.tt</DependentUpon>
     </Compile>
@@ -92,23 +101,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="Concrete\MyStore.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MyStore.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
-    <None Include="Concrete\MyStore.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MyStore.edmx</DependentUpon>
-      <LastGenOutput>MyStore.Context.cs</LastGenOutput>
-    </None>
     <None Include="Concrete\MyStore.edmx.diagram">
       <DependentUpon>MyStore.edmx</DependentUpon>
-    </None>
-    <None Include="Concrete\MyStore.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MyStore.edmx</DependentUpon>
-      <LastGenOutput>MyStore.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -116,6 +115,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Concrete\MyStore.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyStore.edmx</DependentUpon>
+      <LastGenOutput>MyStore.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Concrete\MyStore.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyStore.edmx</DependentUpon>
+      <LastGenOutput>MyStore.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\PagedList.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

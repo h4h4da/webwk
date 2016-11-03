@@ -47,7 +47,7 @@ namespace MyStore.WebUI.Controllers
 
             if (categoryId > 0)
             {
-                productlist = repository.Products.Where(p => p.CateGoryId == categoryId);
+                productlist = repository.Products.Where(p => p.CategoryId == categoryId);
             }
             var s= productlist.OrderBy(x=>x.Id);
            
@@ -61,7 +61,7 @@ namespace MyStore.WebUI.Controllers
 
             if (categoryId > 0)
             {
-                productlist = repository.Products.Where(p=>p.CateGoryId==categoryId);
+                productlist = repository.Products.Where(p=>p.CategoryId==categoryId);
             }
 
             ProductsListViewModel viewModel = new ProductsListViewModel

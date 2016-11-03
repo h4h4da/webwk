@@ -13,6 +13,7 @@ namespace MyStore.Domain.Concrete
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.ModelConfiguration.Conventions;
+
     public partial class MyStoreEntities : DbContext
     {
         public MyStoreEntities()
@@ -26,6 +27,9 @@ namespace MyStore.Domain.Concrete
         }
     
         public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetail { get; set; }
         public virtual DbSet<Product> Product { get; set; }
     }
 }

@@ -12,22 +12,27 @@ namespace MyStore.Domain.Concrete
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Order()
         {
             this.OrderDetail = new HashSet<OrderDetail>();
         }
     
         public int Id { get; set; }
+        public Nullable<int> CustomerId { get; set; }
+        public Nullable<System.DateTime> OrderDate { get; set; }
         public string Name { get; set; }
-        public int CategoryId { get; set; }
-        public decimal Price { get; set; }
-        public string ImageUrl { get; set; }
-        public string Description { get; set; }
+        public string Province { get; set; }
+        public string City { get; set; }
+        public string District { get; set; }
+        public string DetailAddress { get; set; }
+        public string Zip { get; set; }
+        public string Phone { get; set; }
+        public Nullable<bool> GifrWrap { get; set; }
     
-        public virtual Category Category { get; set; }
+        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetail { get; set; }
     }

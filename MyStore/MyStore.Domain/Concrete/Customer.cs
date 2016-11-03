@@ -12,23 +12,21 @@ namespace MyStore.Domain.Concrete
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Customer()
         {
-            this.OrderDetail = new HashSet<OrderDetail>();
+            this.Order = new HashSet<Order>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
-        public int CategoryId { get; set; }
-        public decimal Price { get; set; }
-        public string ImageUrl { get; set; }
-        public string Description { get; set; }
+        public string UserName { get; set; }
+        public string PassWord { get; set; }
+        public Nullable<decimal> Balance { get; set; }
+        public string Email { get; set; }
     
-        public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

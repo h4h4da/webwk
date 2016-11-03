@@ -15,11 +15,9 @@ namespace MyStore.Domain.Concrete
 
         [Required(ErrorMessage = "请输入省份")]
         [Display(Name = "收货人姓名")]
-        public string Name { get; set; }
-
-        [Required(ErrorMessage = "请输入姓名")]
-        [Display(Name = "省份名")]
         public string Province { get; set; }
+
+      
 
 
         [Required(ErrorMessage = "请输入城市")]

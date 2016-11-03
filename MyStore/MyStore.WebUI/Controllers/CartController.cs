@@ -14,10 +14,11 @@ namespace MyStore.WebUI.Controllers
         // GET: Cart
 
         private IProductsRepository repository;
-
-        public CartController(IProductsRepository repositoryParam)
+        private IOrderProcessor orderProcessor;
+        public CartController(IProductsRepository repositoryParam,IOrderProcessor proc)
         {
             this.repository = repositoryParam;
+            this.orderProcessor = proc;
         }
 
         private Cart GetCart()
@@ -64,6 +65,23 @@ namespace MyStore.WebUI.Controllers
         public ViewResult Checkout()
         {
             return View(new ShippingAddress());
+        }
+        [HttpPost]
+        public ViewResult Checkout(Cart cart, ShippingAddress shippingAddress) {
+            if (cart.Line.Count() == 0) {
+                ModelState.AddModelError("", "抱歉，购物车是空的，无法结算！");
+
+            }
+            if (ModelState.IsValid)
+            {
+                orderProcessor.ProcessOrder(cart, shippingAddress);
+                cart.Clear();
+                return View("Complete");
+            }
+            else
+            {
+                return View(new ShippingAddress());
+            }
         }
     }
 }

@@ -23,6 +23,8 @@ namespace MyStore.WebUI.Infrastructure
         private void AddBindings()
         {
             kernel.Bind<IProductsRepository>().To<EFProductRepository>();
+            EmailSettings emailSettings = new EmailSettings();
+            kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>().WithConstructorArgument("settings",emailSettings);
         }
 
         public object GetService(Type serviceType)

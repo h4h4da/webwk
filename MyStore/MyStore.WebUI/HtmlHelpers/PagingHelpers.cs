@@ -22,14 +22,17 @@ namespace MyStore.WebUI.HtmlHelpers
                 tagBuilder.InnerHtml = i.ToString();
                 if (i == paginginfo.CurrentPage)
                 {
-                    tagBuilder.AddCssClass("selected");
-
+                    result.Append("<li class='active'>" + tagBuilder.ToString() + "</li>");
                 }
-                result.Append("<div class='btn-group'>" + tagBuilder.ToString()+"</div>");
+                else
+                {
+                    result.Append("<li>" + tagBuilder.ToString() + "</li>");
+                }
+                
 
             }
 
-            return MvcHtmlString.Create("<div class='btn-toolbar'>" + result.ToString()+"</div>");
+            return MvcHtmlString.Create("<nav> <ul class='pagination'>" + result.ToString() + "</ul ></nav>");
 
         }
     }

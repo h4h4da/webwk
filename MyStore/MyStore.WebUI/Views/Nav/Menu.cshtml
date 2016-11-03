@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<MyStore. Domain.Concrete.Category>
 
-@Html.ActionLink("主页","List","Product",null ,new { @class="btn btn-block btn-default btn-lg"})
+@Html.ActionLink("主页","List","Product",null ,new { @class= "list-group-item" })
 
 
 @foreach (var category in Model)
 {
     @Html.RouteLink(category.Name,
         new { controller="Product",action="List", categoryId= category.Id,page=1},
-        new { @class="btn btn-block btn-default btn-lg"+(category.Id==ViewBag.CurrentCategoryId?"btn-primary":"")}
+        new { @class= "list-group-item" + (category.Id==ViewBag.CurrentCategoryId? " active" : "")}
     )
 }

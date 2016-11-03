@@ -67,14 +67,18 @@ namespace MyStore.WebUI.Controllers
             return View(new ShippingAddress());
         }
         [HttpPost]
-        public ViewResult Checkout(Cart cart, ShippingAddress shippingAddress) {
+        public ViewResult Checkout(Cart cart, ShippingAddress shippingAddress,Customer customer) {
             if (cart.Line.Count() == 0) {
                 ModelState.AddModelError("", "抱歉，购物车是空的，无法结算！");
 
             }
             if (ModelState.IsValid)
             {
-                orderProcessor.ProcessOrder(cart, shippingAddress);
+                if (customer.Id == 0)
+                {
+                    customer = repository.Customers.FirstOrDefault(c => c.Id == 1);
+                }
+                orderProcessor.ProcessOrder(cart, shippingAddress,customer);
                 cart.Clear();
                 return View("Complete");
             }

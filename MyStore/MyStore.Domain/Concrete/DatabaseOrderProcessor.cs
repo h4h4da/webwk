@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyStore.Domain.Concrete
 {
-    class DatabaseOrderProcessor : IOrderProcessor
+    public class DatabaseOrderProcessor : IOrderProcessor
     {
         public void ProcessOrder(Cart cart, ShippingAddress shippingAddress, Customer customer)
         {

@@ -70,6 +70,7 @@
     <Compile Include="Concrete\Customer.cs">
       <DependentUpon>MyStore.tt</DependentUpon>
     </Compile>
+    <Compile Include="Concrete\DatabaseOrderProcessor.cs" />
     <Compile Include="Concrete\EFProductRepository.cs" />
     <Compile Include="Concrete\EmailOrderProcessor.cs" />
     <Compile Include="Concrete\EmailSettings.cs" />

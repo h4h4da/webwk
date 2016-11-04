@@ -30,6 +30,21 @@ namespace MyStore.WebUI.Controllers
             ViewBag.CategoryList = selectListItem;
             return View(product);
         }
+        [HttpPost]
+        public ActionResult Edit(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.SaveProduct(product);
+                TempData["msg"] = string.Format("{0} 保存成功", product.Name);
+                return RedirectToAction("Index");
+            }
+            else {
+                IEnumerable<SelectListItem> selectListItem = repository.Categories.ToList().Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name });
+                ViewBag.CategoryList = selectListItem;
+                return View(product);
+            }
+        }
 
 
     }

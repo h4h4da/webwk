@@ -25,6 +25,25 @@ namespace MyStore.Domain.Concrete
         {
             get { return db.Product; }
         }
-       
+
+        public void SaveProduct(Product product)
+        {
+            if (product.Id == 0)
+            {
+                db.Product.Add(product);
+            }
+            else {
+                Product dbEntry = db.Product.Find(product.Id);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = product.Name;
+                    dbEntry.CategoryId = product.CategoryId;
+                    dbEntry.Price = product.Price;
+                    dbEntry.Description = product.Description;
+                    dbEntry.ImageUrl = product.ImageUrl;
+                }
+            }
+            db.SaveChanges();
+        }
     }
 }

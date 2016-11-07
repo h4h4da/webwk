@@ -40,6 +40,7 @@ namespace MyStore.WebUI.Controllers
                 return RedirectToAction("Index");
             }
             else {
+                
                 IEnumerable<SelectListItem> selectListItem = repository.Categories.ToList().Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name });
                 ViewBag.CategoryList = selectListItem;
                 return View(product);

@@ -62,6 +62,5 @@ D:\new\webwk\MyStore\MyStore.Domain\bin\Debug\EntityFramework.SqlServer.xml
 D:\new\webwk\MyStore\MyStore.Domain\bin\Debug\PagedList.xml
 D:\new\webwk\MyStore\MyStore.Domain\bin\Debug\PagedList.Mvc.xml
 D:\new\webwk\MyStore\MyStore.Domain\bin\Debug\zh-Hans\EntityFramework.resources.dll
-D:\new\webwk\MyStore\MyStore.Domain\obj\Debug\MyStore.Domain.csprojResolveAssemblyReference.cache
 D:\new\webwk\MyStore\MyStore.Domain\obj\Debug\MyStore.Domain.dll
 D:\new\webwk\MyStore\MyStore.Domain\obj\Debug\MyStore.Domain.pdb

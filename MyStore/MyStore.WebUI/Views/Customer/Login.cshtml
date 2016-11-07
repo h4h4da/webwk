@@ -1,4 +1,4 @@
-﻿@model MyStore.Domain.Concrete.Customer
+﻿@model MyStore.WebUI.Models.LoginViewModel
 
 @{ 
     ViewBag.Tittle = "Login";
@@ -15,7 +15,7 @@
             @Html.ValidationSummary()
             <div class="form-group">
                 <label> 帐号</label>
-                @Html.TextBoxFor(c=>c.Id,new { @class="form-control"})
+                @Html.TextBoxFor(c=>c.UserName,new { @class="form-control"})
             </div>
             <div class="form-group">
                 <label> 帐号</label>

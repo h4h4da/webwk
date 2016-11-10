@@ -14,5 +14,10 @@ namespace MyStore.Domain.Abstract
         IQueryable<Customer> Customers { get; }
 
         void SaveProduct(Product product);
+        Product DeleteProduct(int id);
+
+        void SaveCategory(Category category);
+
+        Category DeleteCategory(int id);
     }
 }

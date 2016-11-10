@@ -26,6 +26,46 @@ namespace MyStore.Domain.Concrete
             get { return db.Product; }
         }
 
+        public Category DeleteCategory(int id)
+        {
+            Category dbEntry = db.Category.Find(id);
+            if (dbEntry != null)
+            {
+                db.Category.Remove(dbEntry);
+                db.SaveChanges();
+            }
+            return dbEntry;
+        }
+
+        public Product DeleteProduct(int id)
+        {
+            Product dbEntry = db.Product.Find(id);
+            if (dbEntry != null)
+            {
+                db.Product.Remove(dbEntry);
+                db.SaveChanges();
+            }
+            return dbEntry;
+        }
+
+        public void SaveCategory(Category category)
+        {
+            if (category.Id == 0)
+            {
+                db.Category.Add(category);
+            }
+            else {
+                Category dbEntry = db.Category.Find(category.Id);
+                if (dbEntry != null)
+                {
+                  
+                    dbEntry.Name = category.Name;
+                   
+                }
+            }
+            db.SaveChanges();
+        }
+
         public void SaveProduct(Product product)
         {
             if (product.Id == 0)

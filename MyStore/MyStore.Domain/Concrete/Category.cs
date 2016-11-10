@@ -11,7 +11,8 @@ namespace MyStore.Domain.Concrete
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,8 @@ namespace MyStore.Domain.Concrete
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "请输入分类名称")]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "分类名称长度小于100字")]
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

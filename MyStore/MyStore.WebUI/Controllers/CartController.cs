@@ -41,11 +41,11 @@ namespace MyStore.WebUI.Controllers
 
         }
 
-        public RedirectToRouteResult AddToCart(Cart cart,int id, string returnUrl)
+        public int AddToCart(Cart cart,int id, string returnUrl)
         {
             Product product = repository.Products.FirstOrDefault(p => p.Id == id);
-            if (product != null) cart.AddItem(product,1);
-            return RedirectToAction("Index", new { returnUrl });
+            if (product == null) cart.AddItem(product,1);
+            return 23;
         }
         public RedirectToRouteResult RemoveFromCart(Cart cart, int id, string returnUrl)
         {

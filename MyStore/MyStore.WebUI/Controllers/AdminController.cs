@@ -56,7 +56,7 @@ namespace MyStore.WebUI.Controllers
             }
             else {
                 
-                IEnumerable<SelectListItem> selectListItem = repository.Categories.ToList().Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name });
+                IEnumerable<SelectListItem> selectListItem = GetCategorySelectList();
                 ViewBag.CategoryList = selectListItem;
                 return View(product);
             }
@@ -78,8 +78,8 @@ namespace MyStore.WebUI.Controllers
 
         public ActionResult Create()
         {
-            IEnumerable<SelectListItem> selectListItem = repository.Categories.ToList().Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name });
-            ViewBag.CategoryList = selectListItem;
+          
+            ViewBag.CategoryList = GetCategorySelectList();
             return View("Edit",new Product());
         }
         public ActionResult CategoryCreate()
